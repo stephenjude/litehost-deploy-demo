@@ -14,3 +14,8 @@ php artisan optimize
 php artisan queue:restart
 php artisan horizon:terminate
 php artisan reverb:restart
+# Prebuilt Rust binary for the Custom worker demo, fetched once into the home dir.
+if [ ! -x "$HOME/miniserve" ]; then
+  curl -fSL -o "$HOME/miniserve" https://github.com/svenstaro/miniserve/releases/download/v0.35.0/miniserve-0.35.0-x86_64-unknown-linux-musl
+  chmod +x "$HOME/miniserve"
+fi
